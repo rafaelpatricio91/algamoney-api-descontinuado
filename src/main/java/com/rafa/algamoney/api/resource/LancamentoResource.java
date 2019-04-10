@@ -24,6 +24,7 @@ import com.rafa.algamoney.api.event.RecursoCriadoEvent;
 import com.rafa.algamoney.api.exceptionhandler.AlgamoneyExceptionHandler.Erro;
 import com.rafa.algamoney.api.model.Lancamento;
 import com.rafa.algamoney.api.repository.LancamentoRepository;
+import com.rafa.algamoney.api.repository.filter.LancamentoFilter;
 import com.rafa.algamoney.api.service.LancamentoService;
 import com.rafa.algamoney.api.service.exception.PessoaInexistenteOuInativaException;
 
@@ -51,7 +52,7 @@ public class LancamentoResource
 	}
 	
 	@GetMapping
-	public List<Lancamento> listar()
+	public List<Lancamento> pesquisar(LancamentoFilter filter)
 	{
 		return lancamentoRepository.findAll();
 	}
